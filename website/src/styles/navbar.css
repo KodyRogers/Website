@@ -1,0 +1,134 @@
+
+/* ========================================
+   NAVIGATION
+======================================== */
+
+.navbar {
+    position: relative;
+    z-index: 100;
+
+    width: 100%;
+    border-bottom: 1px solid rgb(48 57 75 / 35%);
+}
+
+.navbar__container {
+    max-width: var(--container-width);
+    min-height: 80px;
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Brand */
+
+.navbar__brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+}
+
+.navbar__brand span {
+    color: var(--color-accent-pink);
+}
+
+/* Navigation links */
+
+.navbar__links {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.navbar__links a {
+    position: relative;
+    color: var(--color-text-secondary);
+    font-size: var(--text-sm);
+    transition: color var(--transition-normal);
+}
+
+.navbar__links a:hover,
+.navbar__links a:focus-visible {
+    color: var(--color-text-primary);
+}
+
+/* Contact button */
+
+.navbar__contact {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    padding: 0.7rem 1.25rem;
+
+    border: 1px solid var(--color-accent-blue);
+    border-radius: var(--radius-md);
+
+    font-size: var(--text-sm);
+    transition: background var(--transition-normal),
+                border-color var(--transition-normal);
+}
+
+.navbar__contact:hover {
+    background: rgb(87 155 255 / 12%);
+    border-color: var(--color-accent-pink);
+}
+
+/* Mobile menu */
+
+.navbar__menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--color-text-primary);
+}
+
+@media (max-width: 768px) {
+    .navbar__container {
+        min-height: 70px;
+    }
+
+    .navbar__links {
+        display: none;
+    }
+
+    .navbar__links--open {
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        width: 100%;
+        padding: 1rem 2rem;
+
+        background: var(--color-surface);
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .navbar__links--open a {
+        padding: 1rem 0;
+    }
+
+    .navbar__contact {
+        margin-left: auto;
+        margin-right: 1rem;
+    }
+
+    .navbar__menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 420px) {
+    .navbar__contact {
+        display: none;
+    }
+}
