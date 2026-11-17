@@ -86,15 +86,17 @@
 /* Heading */
 
 .hero__title {
-    display: flex;
-    flex-direction: column;
-
     max-width: 750px;
 
     font-size: clamp(3.5rem, 6.5vw, 6.5rem);
     font-weight: 700;
     letter-spacing: -0.075em;
     line-height: 0.98;
+}
+
+.hero__title-line {
+    display: block;
+    white-space: nowrap;
 }
 
 .hero__gradient-text {
